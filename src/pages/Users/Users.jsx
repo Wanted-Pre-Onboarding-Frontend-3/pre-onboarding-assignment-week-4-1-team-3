@@ -1,4 +1,5 @@
 import usersApi from 'api/usersApi';
+import { useState } from 'react';
 import { useQueries } from 'react-query';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { formatUsersData } from 'utils/formatUsersData';
@@ -21,7 +22,8 @@ const Users = () => {
   const setDataTotalCount = useSetRecoilState(dataTotalCountState);
   const setUsersData = useSetRecoilState(usersDataState);
 
-  const [userSettingData, setUserSettingData] = useRecoilState(userSettingDataState);
+  const [userSettingData, setUserSettingData] = useState([]);
+  const [accountsData, setAccountsData] = useState([]);
 
   useQueries([
     {
@@ -45,6 +47,12 @@ const Users = () => {
     {
       queryKey: ['userSetting'],
       queryFn: () => usersApi.getUserSettingData(),
+      onSuccess: (res) => setUserSettingData(res.data),
+      keepPreviousData: true,
+    },
+    {
+      queryKey: ['accounts'],
+      queryFn: () => usersApi.getAccountsData(),
       onSuccess: (res) => setUserSettingData(res.data),
       keepPreviousData: true,
     },

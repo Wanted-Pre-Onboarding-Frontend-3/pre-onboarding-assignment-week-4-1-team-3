@@ -5,11 +5,6 @@ export const usersDataState = atom({
   default: [],
 });
 
-export const userSettingDataState = atom({
-  key: 'userSettingDataState',
-  default: [],
-});
-
 // Pagination
 export const currentPageState = atom({
   key: 'currentPageState',

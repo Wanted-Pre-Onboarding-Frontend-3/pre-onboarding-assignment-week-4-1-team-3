@@ -5,6 +5,8 @@ const usersApi = {
 
   getUserSettingData: async () => await axiosInstance.get('/userSetting'),
 
+  getAccountsData: async () => await axiosInstance.get('/accounts'),
+
   getSearchData: async ({ params }) => await axiosInstance.get('/users', { params }),
 
   addNewUserData: async (config) => await axios.post('/users', config),
