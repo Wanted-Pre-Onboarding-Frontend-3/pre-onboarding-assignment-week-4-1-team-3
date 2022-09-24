@@ -9,7 +9,6 @@ import Main from './pages/Main';
 import UserDetail from './pages/userdetail/UserDetail';
 import Users from 'pages/Users/Users';
 
-
 const queryClient = new QueryClient();
 
 const App = () => {
