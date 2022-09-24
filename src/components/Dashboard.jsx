@@ -7,7 +7,6 @@ import { Layout, Menu } from 'antd';
 import logo from '../assets/logo_white.png';
 import usersApi from 'api/usersApi';
 
-
 const { Footer, Sider } = Layout;
 
 const Dashboard = () => {
